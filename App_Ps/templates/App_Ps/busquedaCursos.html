@@ -1,0 +1,24 @@
+{% extends "App_Ps/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h4> Buscar cursos por su camada</h4> 
+                            
+{% endblock %}
+
+
+
+{% block description %}
+
+    <form actions="/App_Ps/buscar/"method='GET'> 
+
+        <input type="number" name="camada" id="camada">
+
+        <input type="Submit" value="Buscar">
+
+
+    </form>
+
+{% endblock %}
