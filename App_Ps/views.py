@@ -52,21 +52,21 @@ def formulario2(request):
       return render(request,'App_Ps/formu2.html',{'formu2':formulario2})
 
 def busquedaCursos(request):
-      return render (request, 'App_Ps/busquedaCursos.html')
+      return render (request, 'App_Ps/formu1.html')
 
 def buscar(request):
-      if request.GET['camada']:
+      if request.method=='GET':
 
-            busqueda= request.GET['camada']
+            camada= request.GET['camada']
             
-            cursos=Curso.objects.filter(camada__icontains=busqueda)
+            cursos=Curso.objects.filter(camada=camada)
            
 
-            return render(request, "App_Ps/formu1.html",{'cursos':cursos, 'busqueda':busqueda})
+            return render(request, "App_Ps/buscar.html",{'cursos':cursos,'camada':camada})
             
 
       else:
             mensaje= 'No enviaste datos.'
 
             
-      return HttpResponse(f"Estoy buscando la camada numero: {busqueda}")
+      return HttpResponse(mensaje)

@@ -5,29 +5,18 @@
 
 {% block titulo %}
 
-<h3>Acá podras buscar un curso!</h3>
+<h1>Acá podras buscar un curso!</h1>
+<form action="/App_Ps/buscar/" method="GET">   
 
-<table align="center">
-    {{formu1.as_table}}
-</table> 
-<p>                   </p>
-<p>                   </p>
-<p><input type="Submit" value="Buscar"></p>
+    <div class="top-margin">
+        <label for="camada">camada </label>
+        <input id="camada" type="number" name="camada" class="form-control">
+    </div>
+    <div class="col-lg-10 text-right">
+        <button class="btn btn-action" type="submit">Buscar</button>					
+    </div>
+</form>
 
-<p>Estás buscando la camada: {{busqueda}}</p>
-
-    {% for curso in cursos %} 
-
-        <ul>
-            <li>Curso: {{curso.nombre}}</li>
-            <li>Camada: {{curso.camada}}</li>
-
-
-
-        </ul>
-
-    {% endfor %}
-
-                            
+      
 {% endblock %}
     

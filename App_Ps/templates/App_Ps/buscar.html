@@ -1,0 +1,25 @@
+{% extends "App_Ps/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %}
+    <p>Estás buscando la camada: {{busqueda}}</p>
+    {% if cursos %}
+    {% for curso in cursos %} 
+
+        <ul>
+            <h3>
+            <li>Curso: {{curso.nombre}}</li>
+            <li>Camada: {{curso.camada}}</li>
+            </h3>  
+
+
+
+        </ul>
+
+    {% endfor %}
+    {% endif %}
+                            
+      
+{% endblock %}
