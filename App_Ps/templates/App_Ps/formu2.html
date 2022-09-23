@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
- 
-<form action=""method='POST'> {% csrf_token %}
-<table>
-
-    {{formu2.as_table}}
-</table>
+{% extends "App_Ps/padre.html" %}
 
 
-<input type="submit" value ='Enviar'>
+{% load static %}
 
-</form>
+{% block titulo %}
 
+<h2>Acá podras registrarte como profesor</h2>
 
-</body>
-</html>
+{{formu2.as_table}}
+
+<p>                   </p>
+<p>                   </p>
+<input type="Submit" value="Enviar">
+                            
+{% endblock %}
+    
+

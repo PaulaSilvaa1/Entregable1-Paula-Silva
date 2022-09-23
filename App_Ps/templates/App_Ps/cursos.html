@@ -5,6 +5,27 @@
 
 {% block titulo %}
 
-Acá encuentras los cursos.
+<h1>Acá encuentraras los cursos.</h1>
+
+{{formu1.as_table}}
+                            
+{% endblock %}
+
+{% block description %}
+
+<p>Estas buscando la camada :{{busqueda}}</p>
+
+{% for curso in curso %}
+
+    <ul>
+
+        <li> Curso: {{curso.nombre}} </li>
+        <li> Camada: {{curso.camada}} </li>
+
+
+
+    </ul>
+
+{% endfor %}
                             
 {% endblock %}
