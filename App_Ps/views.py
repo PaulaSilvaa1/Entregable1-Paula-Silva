@@ -58,9 +58,12 @@ def buscar(request):
       if request.GET['camada']:
 
             busqueda= request.GET['camada']
+            
             cursos=Curso.objects.filter(camada__icontains=busqueda)
+           
 
-            return render(request, "App_Ps/inicio.html",{'cursos':cursos, 'busqueda':busqueda})
+            return render(request, "App_Ps/formu1.html",{'cursos':cursos, 'busqueda':busqueda})
+            
 
       else:
             mensaje= 'No enviaste datos.'

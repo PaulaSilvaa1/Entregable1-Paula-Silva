@@ -7,11 +7,27 @@
 
 <h3>Acá podras buscar un curso!</h3>
 
-{{formu1.as_table}}
-
+<table align="center">
+    {{formu1.as_table}}
+</table> 
 <p>                   </p>
 <p>                   </p>
 <p><input type="Submit" value="Buscar"></p>
+
+<p>Estás buscando la camada: {{busqueda}}</p>
+
+    {% for curso in cursos %} 
+
+        <ul>
+            <li>Curso: {{curso.nombre}}</li>
+            <li>Camada: {{curso.camada}}</li>
+
+
+
+        </ul>
+
+    {% endfor %}
+
                             
 {% endblock %}
     
